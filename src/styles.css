@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+
+/* 🚀 Toast Slide-In with Spring/Break Effect */
+@keyframes slideInBreak {
+  0% { 
+    transform: translateX(120%); 
+    opacity: 0; 
+  }
+  70% { 
+    transform: translateX(-10%); /* Over-shoots the target (the break) */
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(0); /* Settles back */
+  }
+}
+
+/* 📦 Card Fade-In with Scale-Pop Effect */
+@keyframes popIn {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.9) translateY(20px); 
+  }
+  80% { 
+    transform: scale(1.02) translateY(-2px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1) translateY(0); 
+  }
+}
+
+/* ⚡️ Animation Classes */
+.animate-slide-in {
+  animation: slideInBreak 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.animate-fade-in {
+  animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* 🫨 Optional: Error Shake Effect for wrong login */
+@keyframes shakeBreak {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-4px); }
+}
+
+.animate-shake {
+  animation: shakeBreak 0.4s ease-in-out;
+}

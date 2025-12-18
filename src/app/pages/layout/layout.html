@@ -1,0 +1,59 @@
+<div class="min-h-screen bg-slate-50">
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16 items-center">
+        
+        <div class="flex items-center gap-8">
+          <div class="flex items-center gap-2">
+            <div class="bg-indigo-600 p-2 rounded-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+              </svg>
+            </div>
+            <span class="text-xl font-bold text-slate-900 tracking-tight">Crontex<span class="text-indigo-600">Bus</span></span>
+          </div>
+
+          <nav class="hidden md:flex items-center gap-1">
+            <a routerLink="/dashboard" routerLinkActive="bg-indigo-50 text-indigo-600" 
+               class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-all">
+              Dashboard
+            </a>
+            <a routerLink="/vehicles" routerLinkActive="bg-indigo-50 text-indigo-600" 
+               class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-all">
+              Vehicles
+            </a>
+            <a routerLink="/booking" routerLinkActive="bg-indigo-50 text-indigo-600" 
+               class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-all">
+              Bookings
+            </a>
+            <a routerLink="/customer" routerLinkActive="bg-indigo-50 text-indigo-600" 
+               class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-600 hover:bg-slate-100 transition-all">
+              Customers
+            </a>
+          </nav>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="hidden sm:flex flex-col items-end">
+            <span class="text-sm font-bold text-slate-900">{{ userName }}</span>
+            <span class="text-xs text-slate-500 font-medium">System Manager</span>
+          </div>
+          
+          <button (click)="onLogout()" 
+                  class="flex items-center justify-center p-2 rounded-full bg-slate-100 text-slate-600 hover:bg-red-50 hover:text-red-600 transition-all border border-slate-200">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <div class="animate-fade-in">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
